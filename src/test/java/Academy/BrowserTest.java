@@ -6,8 +6,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 
 public class BrowserTest {
@@ -17,12 +16,12 @@ public class BrowserTest {
 	public void getData()
 	{
 		System.out.println("Hello Guys");
-		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-		WebDriver driver =new ChromeDriver();
-		driver.get("https://rahylshettyacademy.azurewebsites.net/webapp/");
+		System.setProperty("webdriver.gecko.driver", "geckodriver");
+		WebDriver driver =new FirefoxDriver();
+		driver.get("https://akhilazdevops.azurewebsites.net/webapp/");
 		String text =driver.findElement(By.cssSelector("h1")).getText();
 		System.out.println(text);
-		Assert.assertTrue(text.equalsIgnoreCase("RahulShettyAcademy.com Learning"));
+		Assert.assertTrue(text.equalsIgnoreCase("Akhil is Learning Azure DevOps with CI/CD pipelines"));
 		driver.close();
 	
 		
